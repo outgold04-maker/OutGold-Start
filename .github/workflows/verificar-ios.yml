@@ -1,0 +1,39 @@
+name: Verificar compilacao OutGold Start iOS
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'ios/OutGoldStart_iOS26_SOURCE.zip'
+      - '.github/workflows/verificar-ios.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-ios:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ambiente Xcode
+        run: |
+          xcodebuild -version
+          xcrun --sdk iphonesimulator --show-sdk-version
+      - name: Preparar projeto
+        run: |
+          brew install xcodegen
+          unzip -q ios/OutGoldStart_iOS26_SOURCE.zip
+          cd outgold-ios-project
+          xcodegen generate
+      - name: Compilar para simulador (sem assinatura)
+        run: |
+          cd outgold-ios-project
+          xcodebuild \
+            -project OutGoldStart.xcodeproj \
+            -scheme OutGoldStart \
+            -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' \
+            -configuration Debug \
+            CODE_SIGNING_ALLOWED=NO \
+            build

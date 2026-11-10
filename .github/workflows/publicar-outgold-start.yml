@@ -1,0 +1,43 @@
+name: Publicar OutGold Start 5D
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'downloads/OutGold_Start_v5.1.6.apk'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obter os arquivos
+        uses: actions/checkout@v4
+
+      - name: Conferir o APK enviado
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s downloads/OutGold_Start_v5.1.6.apk
+          unzip -tq downloads/OutGold_Start_v5.1.6.apk
+          sha256sum downloads/OutGold_Start_v5.1.6.apk
+
+      - name: Publicar download publico da versao aprovada
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          TAG="v5.1.6"
+          APK="downloads/OutGold_Start_v5.1.6.apk"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" "$APK" --clobber
+          else
+            gh release create "$TAG" "$APK" \
+              --title "OutGold Start 5D v5.1.6" \
+              --notes "Versao Android oficial aprovada. O aplicativo esta disponivel para download direto em APK." \
+              --latest
+          fi

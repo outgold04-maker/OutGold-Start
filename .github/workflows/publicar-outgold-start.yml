@@ -23,7 +23,7 @@ jobs:
           set -euo pipefail
           test -s downloads/OutGold_Start_v5.1.6.apk
           unzip -tq downloads/OutGold_Start_v5.1.6.apk
-          sha256sum downloads/OutGold_Start_v5.1.6.apk
+          echo '8681ed8e2aff9d2f3d103de8daa37d49aeacda14cc8823ce4b19c6494adb2bec  downloads/OutGold_Start_v5.1.6.apk' | sha256sum --check --status
 
       - name: Publicar download publico da versao aprovada
         shell: bash

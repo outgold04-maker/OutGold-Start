@@ -1,10 +1,15 @@
-name: Verificar compilacao OutGold Start iOS
+name: Verificar compilacao OutGold Start iOS 26
 
 on:
   push:
     branches: [main]
     paths:
       - 'ios/OutGoldStart_iOS26_SOURCE.zip'
+      - 'ios/overrides/**'
+      - '.github/workflows/verificar-ios.yml'
+  pull_request:
+    paths:
+      - 'ios/**'
       - '.github/workflows/verificar-ios.yml'
   workflow_dispatch:
 
@@ -16,18 +21,29 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Ambiente Xcode
         run: |
           xcodebuild -version
           xcrun --sdk iphonesimulator --show-sdk-version
-      - name: Preparar projeto
+
+      - name: Preparar fonte aprovada e correcoes iOS
         run: |
+          set -euo pipefail
           brew install xcodegen
           unzip -q ios/OutGoldStart_iOS26_SOURCE.zip
+          test -f outgold-ios-project/OutGoldStart/Resources/index.html
+          test -f outgold-ios-project/project.yml
+          test -f outgold-ios-project/OutGoldStart/OutGoldStartApp.swift
+          # Only bridge and native alarm code change. Approved HTML/branding stays intact.
+          cp ios/overrides/OutGoldAlarmScheduler.swift outgold-ios-project/OutGoldStart/OutGoldAlarmScheduler.swift
+          cp ios/overrides/OutGoldWebView.swift outgold-ios-project/OutGoldStart/OutGoldWebView.swift
           cd outgold-ios-project
           xcodegen generate
-      - name: Compilar para simulador (sem assinatura)
+
+      - name: Compilar iOS Simulator sem assinatura
         run: |
+          set -o pipefail
           cd outgold-ios-project
           xcodebuild \
             -project OutGoldStart.xcodeproj \
@@ -36,4 +52,12 @@ jobs:
             -destination 'generic/platform=iOS Simulator' \
             -configuration Debug \
             CODE_SIGNING_ALLOWED=NO \
-            build
+            build 2>&1 | tee build-ios.log
+
+      - name: Publicar diagnostico de compilacao
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: outgold-start-ios-build-log
+          path: outgold-ios-project/build-ios.log
+          if-no-files-found: ignore

@@ -112,7 +112,8 @@ struct OutGoldWebView: UIViewRepresentable {
 
         private static func hasEnabledAlarms(_ json: String) -> Bool {
             guard let data = json.data(using: .utf8),
-                  let list = try? JSONSerialization.jsonObject(with: data) as? [[String: Any]] else {
+                  let object = try? JSONSerialization.jsonObject(with: data),
+                  let list = object as? [[String: Any]] else {
                 return false
             }
             return list.contains { ($0["enabled"] as? Bool) == true }

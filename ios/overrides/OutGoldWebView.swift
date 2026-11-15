@@ -16,8 +16,16 @@ struct OutGoldWebView: UIViewRepresentable {
 
         let controller = WKUserContentController()
         controller.add(context.coordinator, name: "outgoldBridge")
+        let voices = AVSpeechSynthesisVoice.speechVoices()
+            .filter { $0.language.lowercased().hasPrefix("pt") }
+            .map { ["name": $0.name, "locale": $0.language] }
+        let voiceData = try? JSONSerialization.data(withJSONObject: voices)
+        let voicesJSON = voiceData.flatMap { String(data: $0, encoding: .utf8) } ?? "[]"
+        let script = Self.bridgeScript.replacingOccurrences(
+            of: "OUTGOLD_NATIVE_VOICES", with: voicesJSON
+        )
         controller.addUserScript(WKUserScript(
-            source: Self.bridgeScript,
+            source: script,
             injectionTime: .atDocumentStart,
             forMainFrameOnly: true
         ))
@@ -83,6 +91,9 @@ struct OutGoldWebView: UIViewRepresentable {
                 let args = payload["args"] as? [Any] ?? []
                 let text = (args.first as? String) ??
                     ((args.first as? [String: Any])?["text"] as? String) ?? ""
+                let selectedVoice = args.count > 1 ? (args[1] as? String ?? "") : ""
+                let speed = args.count > 2 ? (args[2] as? NSNumber)?.floatValue ?? 1 : 1
+                let pitch = args.count > 3 ? (args[3] as? NSNumber)?.floatValue ?? 1 : 1
                 if !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                     Task { @MainActor in
                         self.speechSynthesizer.stopSpeaking(at: .immediate)
@@ -90,7 +101,13 @@ struct OutGoldWebView: UIViewRepresentable {
                             .playback, mode: .spokenAudio, options: [.duckOthers]
                         )
                         let utterance = AVSpeechUtterance(string: text)
-                        utterance.voice = AVSpeechSynthesisVoice(language: "pt-BR")
+                        utterance.voice = AVSpeechSynthesisVoice.speechVoices()
+                            .first(where: { $0.name == selectedVoice || $0.identifier == selectedVoice })
+                            ?? AVSpeechSynthesisVoice(language: "pt-BR")
+                        utterance.rate = max(AVSpeechUtteranceMinimumSpeechRate,
+                            min(AVSpeechUtteranceMaximumSpeechRate,
+                                AVSpeechUtteranceDefaultSpeechRate * speed))
+                        utterance.pitchMultiplier = max(0.5, min(2.0, pitch))
                         self.speechSynthesizer.speak(utterance)
                     }
                 }
@@ -182,7 +199,7 @@ struct OutGoldWebView: UIViewRepresentable {
           delete slots[id];
           localStorage.setItem('outgold_ios_slots', JSON.stringify(slots));
         },
-        getVoices: () => '[]',
+        getVoices: () => JSON.stringify(OUTGOLD_NATIVE_VOICES),
         saveVoice: (s) => localStorage.setItem('outgold_ios_voice', s),
         saveLighting: (s) => localStorage.setItem('outgold_alarm_lighting_v1', s),
         setVacationUntil: (v) => localStorage.setItem('outgold_ios_vacation', v || ''),

@@ -22,7 +22,8 @@ final class OutGoldAlarmScheduler {
     /// A scheduling error therefore doesn't erase previously working alarms.
     func synchronize(json: String) async -> Bool {
         guard let data = json.data(using: .utf8),
-              let items = try? JSONSerialization.jsonObject(with: data) as? [[String: Any]] else {
+              let object = try? JSONSerialization.jsonObject(with: data),
+              let items = object as? [[String: Any]] else {
             return false
         }
 
@@ -55,7 +56,7 @@ final class OutGoldAlarmScheduler {
         let signatures = defaults.dictionary(forKey: signatureKey) as? [String: String] ?? [:]
         var next = existing
         var nextSignatures = signatures
-        let wanted = Set(desired.map(\.key))
+        let wanted = Set(desired.map { $0.key })
         var newlyScheduled: [UUID] = []
 
         // Phase 1: do not cancel the existing alerts until replacements are ready.

@@ -248,7 +248,7 @@ function selectTab(name,setHash){
   document.getElementById('screen-'+k).hidden=!visible;
  });
  if(setHash&&location.hash!==('#'+name)) history.pushState(null,'','#'+name);
- scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+ scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
 }
 tabs.forEach(function(t,i){t.addEventListener('click',function(){selectTab(t.dataset.tab,true)});
  t.addEventListener('keydown',function(e){if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;
@@ -267,7 +267,7 @@ function renderAvatar(type){
  var a=byId(id),name=val(isCandidate?'candidateName':'companyName'),role=val(isCandidate?'candidateRole':'companyActivity'),city=val(isCandidate?'candidateCity':'companyCity');
  a.textContent='';
  if(p.image){var img=new Image();img.alt=isCandidate?'Foto selecionada':'Logotipo selecionado';img.src=p.image;a.appendChild(img)}
- else a.textContent=isCandidate?initials(name):initials(name)||'🏢';
+ else a.textContent=name?initials(name):(isCandidate?'👤':'🏢');
  byId(isCandidate?'candidateDisplay':'companyDisplay').textContent=name||(isCandidate?'Seu perfil':'Sua empresa');
  byId(isCandidate?'candidateSubtitle':'companySubtitle').textContent=[role,city].filter(Boolean).join(' · ')||(isCandidate?'Foto e dados profissionais':'Identidade e apresentação');
 }

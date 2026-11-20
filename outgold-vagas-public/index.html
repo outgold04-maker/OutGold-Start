@@ -3,40 +3,338 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0b0b0f">
-<meta name="description" content="OutGold Vagas 5D: portal de empregos para todo o Brasil. Candidaturas gratuitas e sete dias de divulgação grátis para empresas.">
+<meta name="theme-color" content="#0d0d12">
+<meta name="description" content="OutGold Vagas 5D — portal de oportunidades com candidaturas sempre grátis.">
 <meta name="robots" content="noindex,nofollow">
-<meta property="og:title" content="OutGold Vagas 5D — oportunidades para todo o Brasil">
-<meta property="og:description" content="Uma plataforma para aproximar empresas e candidatos.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>OutGold Vagas 5D | Acesso independente</title>
+<meta property="og:title" content="OutGold Vagas 5D">
+<meta property="og:description" content="Conectando empresas e oportunidades em todo o Brasil.">
 <link rel="icon" href="https://raw.githubusercontent.com/outgold04-maker/OutGold-Start/main/outgold-sites/company/logo-original.jpg">
+<title>OutGold Vagas 5D | Portal de oportunidades</title>
 <style>
-:root{color-scheme:dark;--gold:#f0ca82;--gold2:#bf8b38;--surface:#16171d;--muted:#b6b1a9;--stroke:#69512d;--ink:#fcf8ed}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:#0a0b0e;isolation:isolate}body:before{content:"";position:fixed;inset:-20%;z-index:-2;background:radial-gradient(ellipse at 12% 10%,#bb873522,transparent 36%),radial-gradient(ellipse at 86% 72%,#ecc47715,transparent 34%),repeating-linear-gradient(125deg,transparent 0 112px,#e2c29109 112px 113px,transparent 114px 260px),linear-gradient(125deg,#08090b,#191919 47%,#09090e);animation:glow 21s alternate ease-in-out infinite;pointer-events:none}body:after{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 80% 22%,#dba54d22 0 1px,transparent 2px),radial-gradient(circle at 23% 73%,#dba54d15 0 1px,transparent 2px);background-size:210px 240px,340px 390px;opacity:.7;animation:sparkle 9s alternate infinite;pointer-events:none}@keyframes glow{to{transform:translate(3%,-1%) scale(1.05)}}@keyframes sparkle{to{opacity:.2}}@media(prefers-reduced-motion:reduce){body:before,body:after{animation:none!important}}
-.wrap{width:min(1180px,calc(100% - 38px));margin:auto}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:15px 0}.header{position:sticky;top:0;background:#0c0d11ed;border-bottom:1px solid #5d46274a;backdrop-filter:blur(20px);z-index:5}.brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--gold);font-weight:800;letter-spacing:.6px}.brand img{width:52px;height:52px;object-fit:cover;border-radius:50%;border:1px solid #88632e;box-shadow:0 0 25px #b6854145}.navlinks{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.navlinks a{color:#d9d5ca;font-size:14px;text-decoration:none}.navlinks a:hover{color:var(--gold)}.pill{display:inline-block;color:#f3dfb6;font-size:12px;letter-spacing:1px;font-weight:800;border:1px solid #7c592c;border-radius:90px;padding:6px 12px;background:#5b421f55}.trial{background:#45341d5d;border-bottom:1px solid #83603155;padding:10px 15px;text-align:center;font-size:13px}.trial strong{color:#ffdf9d}.hero{padding:90px 0 77px;display:grid;grid-template-columns:1.35fr 1fr;align-items:center;gap:36px}.eyebrow{letter-spacing:2.4px;font-size:11px;font-weight:800;color:#dab476;text-transform:uppercase}.hero h1{font:700 clamp(43px,5.8vw,80px)/1.08 Georgia,serif;letter-spacing:-2px;margin:18px 0}.gold{background:linear-gradient(125deg,#be8740 4%,#fff0ba 31%,#cca054 63%,#f0cc78);background-clip:text;-webkit-background-clip:text;color:transparent}.desc{font-size:17px;color:#d0c8bd;max-width:660px}.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;background:linear-gradient(128deg,#dbac55,#fbe0a3 45%,#b98537);color:#20150a;border:0;border-radius:12px;padding:14px 19px;font-weight:800;cursor:pointer;transition:transform .15s;box-shadow:0 10px 29px #e0b06130}.button:hover{transform:translateY(-2px)}.button.secondary{background:#242026;color:#f7dfac;border:1px solid #b38b4c;box-shadow:none}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:25px 0}.hero-card,.panel,.jobcard{border:1px solid #59452b;border-radius:22px;background:linear-gradient(145deg,#252019e3,#14151ae8 70%);box-shadow:0 18px 56px #0007;backdrop-filter:blur(13px)}.hero-card{padding:36px 30px;text-align:center;position:relative;overflow:hidden}.hero-card:before{content:"";position:absolute;right:-120px;top:-80px;width:350px;height:350px;background:radial-gradient(circle,#e9bf6330,transparent 70%);pointer-events:none}.hero-card img{display:block;margin:0 auto 17px;width:150px;height:150px;object-fit:cover;border-radius:50%;border:2px solid #9c752b;box-shadow:0 0 58px #c99b3845}.hero-card h2{margin:0;font:700 29px Georgia}.hero-card p{color:#c5baab}.statrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}.statrow div{padding:13px 7px;border-radius:12px;border:1px solid #8060315e;background:#110e0e77}.statrow strong{display:block;color:#f3d391;font-size:23px}.statrow small{color:#bfb5a5}.section{padding:56px 0}.section h2{font:700 clamp(27px,3vw,40px)/1.2 Georgia;margin:9px 0 9px}.section p.lead{color:#bbb8b2;margin-bottom:25px}.panel{padding:27px}.searchrow{display:grid;grid-template-columns:2fr 1.2fr 1fr auto;gap:10px}.input{width:100%;border-radius:11px;border:1px solid #554b40;background:#111216;color:#faf6ed;padding:14px;font:inherit;min-height:49px}.input:focus{outline:2px solid #bd9552}.empty{padding:52px 24px;text-align:center;border:1px dashed #6b552f;border-radius:17px;margin-top:20px;color:#cfc3ab;background:#15131375}.empty b{display:block;color:#f7d89e;font-size:19px;margin-bottom:7px}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.card{padding:25px;border:1px solid #5b472c;border-radius:20px;background:linear-gradient(145deg,#24201b,#13141a)}.card h3{font:700 25px Georgia;margin:3px 0}.card .price{font:700 38px Georgia;color:#f2d18b;margin:14px 0}.card small{font:400 13px system-ui;color:#c8bfae}.card p{font-size:14px;color:#c6bbae}.card ul{list-style:none;padding:0;margin:20px 0}.card li{font-size:14px;padding:6px 0}.card li:before{content:"✓";margin-right:9px;color:#cfa455}.card.prominent{border-color:#e5b261;box-shadow:0 0 50px #a8742f23}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:20px}.callout{border:1px solid #916a34;background:#47341c55;border-radius:15px;padding:16px 18px;font-size:14px;color:#daccb8;margin:22px 0}.fieldlabel{display:block;font-size:13px;color:#d9c99f;margin:11px 0 6px}textarea.input{resize:vertical;min-height:100px}.fine{font-size:12px;color:#b0a99f}.footer{border-top:1px solid #5d462743;padding:28px 0 45px;color:#a8a09a;font-size:13px}.footgrid{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.footer strong{color:var(--gold)}.hint{color:#c8beaa;font-size:12px}.hidden{display:none!important}.notice{padding:11px 15px;color:#f1d7a6;background:#3b2b197a;border:1px solid #896438;border-radius:11px}
-@media(max-width:850px){.hero{grid-template-columns:1fr;padding:45px 0}.searchrow,.cards,.twocol{grid-template-columns:1fr}.hero-card{padding:25px}.section{padding:37px 0}.nav{align-items:flex-start;flex-direction:column}.navlinks{gap:18px}.hero h1{letter-spacing:-1px}.wrap{width:min(1180px,calc(100% - 30px))}}
+:root{color-scheme:dark;--bg:#0c0c10;--panel:#15151b;--ink:#f5f0e8;--muted:#aba8a4;--gold:#f1d08f;--line:#53432e;--gold2:#ab7737}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;isolation:isolate}
+body:before{content:"";position:fixed;inset:-24%;z-index:-2;background:radial-gradient(ellipse at 12% 8%,#a077292e,transparent 36%),radial-gradient(ellipse at 86% 78%,#f6d18a14,transparent 37%),linear-gradient(134deg,#0a0b0e 2%,#181619 48%,#08090d);animation:move 25s ease-in-out alternate infinite;pointer-events:none}
+body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.55;background-image:linear-gradient(122deg,transparent 0%,#cba15d08 46%,transparent 49%),radial-gradient(circle,#e2b76b55 1px,transparent 1.8px);background-size:100% 100%,270px 340px;animation:shimmer 13s ease-in-out alternate infinite}
+@keyframes move{to{transform:scale(1.07) translate(-2%,2%)}}
+@keyframes shimmer{to{opacity:.2}}
+@media(prefers-reduced-motion:reduce){body:before,body:after{animation:none}}
+button,input,select{font:inherit}button{cursor:pointer}
+a{color:var(--gold)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.shell{width:min(1100px,calc(100% - 36px));margin:0 auto}
+.top{position:sticky;top:0;z-index:30;background:#101015ed;border-bottom:1px solid #5f472947;backdrop-filter:blur(18px)}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:73px}
+.brand{display:flex;align-items:center;gap:11px;border:0;background:none;color:#f2d29b;text-align:left;font-size:17px;letter-spacing:.35px;font-weight:750;white-space:nowrap}
+.brand img{width:49px;height:49px;object-fit:contain;border-radius:100%;border:1px solid #795a2a;box-shadow:0 0 22px #c69b5040}
+.brand small{display:block;color:#b4a994;font-size:10px;letter-spacing:1.15px}
+.tabs{display:flex;align-items:center;gap:4px;overflow:auto;scrollbar-width:none;max-width:100%}
+.tabs::-webkit-scrollbar{display:none}
+.tab{border:none;border-bottom:2px solid transparent;background:transparent;color:#aca9a4;padding:14px 12px;white-space:nowrap;font-size:14px;font-weight:600}
+.tab:hover{color:#ffe0a5}
+.tab[aria-selected="true"]{color:#f1cd89;border-color:#e4b868}
+.state{font-size:11px;color:#dec28b;border:1px solid #6d542c;border-radius:100px;padding:4px 10px;white-space:nowrap}
+main{min-height:calc(100vh - 172px)}
+.screen[hidden]{display:none!important}
+.screen{padding:52px 0 74px;animation:fade .25s ease-out}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+.center{max-width:750px;margin:0 auto}
+.centered{text-align:center}
+.kicker{text-transform:uppercase;letter-spacing:2.8px;font-weight:800;font-size:11px;color:#d5ad69}
+h1,h2,h3,p{margin-top:0}
+h1{font:700 clamp(46px,6.2vw,80px)/1.06 Georgia,serif;letter-spacing:-1.9px;margin:19px 0}
+h2{font:700 clamp(27px,3vw,38px)/1.18 Georgia,serif;margin:12px 0 8px}
+h3{font:700 22px/1.25 Georgia,serif;margin:0 0 10px}
+.gradient{background:linear-gradient(120deg,#ab7332 0%,#fff1c2 38%,#d5ac63 68%,#9b6a2b);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:#c2b9af;max-width:650px;font-size:16px;margin:0 auto 24px}
+.hero{display:flex;align-items:center;justify-content:center;min-height:calc(100svh - 205px);padding:66px 0;text-align:center}
+.hero-inner{max-width:790px}
+.hero-logo{width:134px;height:134px;object-fit:contain;border-radius:100%;border:2px solid #9c7335;box-shadow:0 0 54px #a67a3c4f;margin-bottom:14px}
+.hero .lead{font-size:18px}
+.micro{color:#bda985;font-size:12px;letter-spacing:.3px}
+.hero-status{display:inline-block;color:#f2daac;border:1px solid #6b532e;background:#30251b99;border-radius:999px;padding:7px 17px;margin-top:19px;font-size:12px;font-weight:750}
+.panel{background:linear-gradient(145deg,#1d1b1ddc,#13141adc);border:1px solid #59472e;border-radius:21px;padding:26px;box-shadow:0 18px 40px #0005}
+.panel.light{background:linear-gradient(145deg,#272019ac,#15151aec)}
+.sectionhead{margin-bottom:27px}
+.sectionhead .lead{margin:0;font-size:15px}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.mini{color:#b7afa4;font-size:13px}
+.field{display:block;margin:14px 0 7px;color:#ead7ae;font-size:12px;font-weight:700}
+.control{width:100%;min-height:47px;border-radius:11px;border:1px solid #625341;background:#101116;color:#f4f1eb;padding:12px;font-size:15px}
+.control::placeholder{color:#898783}
+.control:focus{border-color:#deb878;outline:2px solid #deb87866}
+select.control{appearance:auto}
+.button{border:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:11px;background:linear-gradient(122deg,#c18e41,#f7d596 44%,#ae7a32);color:#231709;padding:13px 19px;min-height:46px;font-weight:800;text-decoration:none;transition:transform .16s}
+.button:hover{transform:translateY(-2px)}
+.button.ghost{background:#2a2520;color:#f2d59d;border:1px solid #886438}
+.button.flat{background:#19191e;color:#d6c8aa;border:1px solid #5c513e}
+.button:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.callout{border:1px solid #72562c;background:#3c2b176b;border-radius:13px;padding:12px 16px;color:#ebd5aa;font-size:13px}
+.search{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px}
+.empty{margin-top:19px;padding:55px 19px;text-align:center;border:1px dashed #655032;border-radius:16px;color:#c3b8a9}
+.empty strong{display:block;font-size:17px;color:#f2d296;margin-bottom:6px}
+.profile{display:flex;gap:22px;align-items:center;padding:17px;border-radius:16px;border:1px solid #594530;background:#101114;min-width:0}
+.avatar{width:105px;height:105px;flex:0 0 105px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 35% 18%,#715329,#23232b 75%);border:2px solid #96713e;border-radius:50%;font:700 33px Georgia;color:#f9dfac;overflow:hidden}
+.avatar.square{border-radius:19px;background:#222127}
+.avatar img{height:100%;width:100%;object-fit:cover}
+.avatar.square img{object-fit:contain}
+.profile h3{margin-bottom:3px}
+.profile small{color:#a9a198;font-size:12px;overflow-wrap:anywhere}
+.upload{display:block;max-width:340px}
+.upload input{position:absolute;width:1px;height:1px;opacity:0}
+.upload-label{display:inline-flex;align-items:center;justify-content:center;min-height:43px;padding:9px 14px;border:1px solid #ad8750;border-radius:11px;background:#28231f;color:#f1d4a0;cursor:pointer;font-weight:750;font-size:13px}
+.upload input:focus-visible+.upload-label{outline:2px solid var(--gold);outline-offset:3px}
+.status{font-size:13px;min-height:22px;margin-top:10px;color:#d8c39a}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.pricecard{border:1px solid #544630;background:#17161b;border-radius:18px;padding:23px}
+.pricecard.feature{border-color:#a77c3d;background:linear-gradient(140deg,#2c2119,#15161b 66%)}
+.pricecard .price{font:700 34px Georgia;color:#f3d18b;margin:10px 0 3px}
+.pricecard p{color:#bdb2a3;font-size:13px}
+.pricecard .badge{font-size:11px;color:#f5dca2;border-radius:100px;border:1px solid #816239;padding:3px 9px;display:inline-block;margin-bottom:13px}
+.divider{height:1px;background:#5e4e363d;margin:20px 0}
+ul.short{list-style:none;padding:0;margin:12px 0 0;color:#d6cbba}
+ul.short li{margin:7px 0}
+ul.short li::before{content:"✓";color:#dfb766;margin-right:9px}
+.faint{color:#a8a29a;font-size:12px}
+footer{border-top:1px solid #58442b55;background:#0c0d10e6;color:#a69f95;padding:20px 0 26px;font-size:12px}
+.foot{display:flex;justify-content:space-between;gap:13px;flex-wrap:wrap}
+.foot strong{color:#eacb90}
+@media(max-width:920px){.topline{align-items:stretch;flex-direction:column;gap:3px;padding:12px 0 0}.tabs{width:100%}.tab{padding:11px 13px}.state{display:none}.hero{min-height:calc(100svh - 214px)}.screen{padding:34px 0 62px}}
+@media(max-width:680px){.shell{width:min(1100px,calc(100% - 28px))}.screen{padding:29px 0 51px}.hero{padding:38px 0;min-height:calc(100svh - 225px)}.hero-logo{width:115px;height:115px}h1{font-size:48px}.cols,.grid3,.search{grid-template-columns:1fr}.panel{padding:18px}.profile{gap:14px}.avatar{width:76px;height:76px;flex-basis:76px;font-size:27px}.btns{flex-direction:column}.btns .button{width:100%}}
 </style>
 </head>
 <body>
-<header class="header"><nav class="wrap nav"><a class="brand" href="#inicio"><img alt="Logotipo original OutGold" src="https://raw.githubusercontent.com/outgold04-maker/OutGold-Start/main/outgold-sites/company/logo-original.jpg"><span>OUTGOLD <span style="font-weight:400;color:#fff">VAGAS 5D</span></span></a><div class="navlinks"><a href="#vagas">Vagas</a><a href="#empresas">Empresas</a><a href="#planos">Planos</a><a href="#seguranca">Segurança</a></div></nav></header>
-<div class="trial"><strong>7 DIAS GRÁTIS PARA EMPRESAS</strong> · até 3 vagas simultâneas · candidatos sempre grátis</div>
-<main>
-<section class="wrap hero" id="inicio"><div><span class="eyebrow">Tecnologia OutGold · Brasil</span><h1>O futuro das <span class="gold">oportunidades.</span></h1><p class="desc">Uma plataforma com identidade OutGold para conectar empresas e profissionais em todo o Brasil, com vagas por área, cidade e modalidade.</p><div class="actions"><a class="button" href="#vagas">Explorar vagas</a><a class="button secondary" href="#empresas">Quero anunciar</a></div><div class="notice"><strong>Prévia de acesso independente.</strong> Este endereço já não depende da abertura do Google Apps Script. A migração do banco e das candidaturas ainda não foi ativada; não envie currículos nem faça pagamentos nesta prévia.</div></div><div class="hero-card"><img alt="Marca OutGold original" src="https://raw.githubusercontent.com/outgold04-maker/OutGold-Start/main/outgold-sites/company/logo-original.jpg"><h2>OutGold Vagas 5D</h2><p>Profissional, acessível e pensado para Android, iPhone e computador.</p><div class="statrow"><div><strong>7 dias</strong><small>Teste empresarial previsto</small></div><div><strong>Grátis</strong><small>Para quem procura emprego</small></div></div></div></section>
-<section class="section" id="vagas"><div class="wrap"><span class="eyebrow">Oportunidades</span><h2>Encontre sua próxima vaga</h2><p class="lead">Busca por profissão, cidade e modalidade. Os anúncios reais serão exibidos após a conexão segura com a base existente.</p><div class="panel"><div class="searchrow"><input id="busca" class="input" placeholder="Cargo, empresa ou palavra-chave" aria-label="Buscar vaga"><input id="cidade" class="input" placeholder="Cidade ou estado" aria-label="Buscar cidade"><select id="modalidade" class="input" aria-label="Modalidade"><option value="">Todas as modalidades</option><option>Presencial</option><option>Híbrido</option><option>Remoto</option></select><button class="button" id="pesquisar">Buscar</button></div><div class="empty"><b>Nenhuma vaga foi migrada para este endereço ainda.</b><span>Não vamos inventar anúncios nem expor dados de empresas ou candidatos. O sistema original permanece intacto.</span></div></div></div></section>
-<section class="section" id="empresas"><div class="wrap"><span class="eyebrow">Para empresas</span><h2>Divulgue oportunidades com elegância</h2><div class="twocol"><div class="panel"><h3>Uma semana para conhecer o portal</h3><p class="lead">O plano é oferecer 7 dias corridos gratuitamente, até 3 vagas simultâneas e depois planos acessíveis com pagamento Pix aprovado manualmente.</p><p>Candidatos não pagam para se inscrever. A contratação dos planos só será disponibilizada depois da validação dos cadastros e da segurança da plataforma.</p></div><div class="panel"><h3>Entrar em contato</h3><p class="hint">Se sua empresa deseja participar do lançamento, você pode preparar um e-mail com suas informações. Nenhum dado é armazenado nesta prévia.</p><label class="fieldlabel" for="empresa">Empresa</label><input id="empresa" class="input" placeholder="Nome da empresa" maxlength="100"><label class="fieldlabel" for="contato">E-mail de contato</label><input id="contato" class="input" type="email" placeholder="contato@empresa.com" maxlength="120"><label class="fieldlabel" for="mensagem">O que sua empresa precisa?</label><textarea id="mensagem" class="input" placeholder="Ex.: 2 vagas para logística em Cajamar" maxlength="700"></textarea><div class="actions"><button class="button" id="enviar">Preparar e-mail</button><button class="button secondary" id="copiar">Copiar mensagem</button></div><p class="fine">O envio só ocorre se você confirmar no seu aplicativo de e-mail. Não há cadastro automático nesta etapa.</p></div></div></div></section>
-<section class="section" id="planos"><div class="wrap"><span class="eyebrow">Lançamento nacional</span><h2>Planos simples e acessíveis</h2><p class="lead">Valores de lançamento previstos. Contratação temporariamente indisponível nesta prévia independente.</p><div class="cards"><article class="card"><span class="pill">Essencial</span><h3>Começar</h3><div class="price">R$ 19,90 <small>/ 30 dias</small></div><p>Ou R$ 199 / 365 dias</p><ul><li>Até 1 vaga ativa</li><li>Candidaturas gratuitas</li><li>Contato por e-mail</li></ul></article><article class="card prominent"><span class="pill">Profissional</span><h3>Crescer</h3><div class="price">R$ 39,90 <small>/ 30 dias</small></div><p>Ou R$ 399 / 365 dias</p><ul><li>Até 5 vagas ativas</li><li>Painel da empresa</li><li>Acompanhamento das candidaturas</li></ul></article><article class="card"><span class="pill">Destaque</span><h3>Expandir</h3><div class="price">R$ 79,90 <small>/ 30 dias</small></div><p>Ou R$ 799 / 365 dias</p><ul><li>Até 20 vagas ativas</li><li>Prioridade de visibilidade</li><li>Moderação administrativa</li></ul></article></div></div></section>
-<section class="section" id="seguranca"><div class="wrap"><div class="panel"><span class="eyebrow">Responsabilidade</span><h2>Proteção de candidatos e empresas</h2><p>Não aceite cobranças para concorrer a vagas. Empresas e anúncios precisam ser avaliados antes da divulgação. Currículos não devem ser disponibilizados publicamente e exigem controle de acesso, prazo de retenção e canal de privacidade.</p><p>O portal completo será liberado somente após testes de login, autorização de empresas, limite dos 7 dias, Pix e envio seguro dos currículos. Até lá, esta página não recebe arquivos, senhas nem pagamentos.</p><p class="fine">Contato para privacidade e suporte: <a style="color:#e8ba6d" href="mailto:outgold04@gmail.com">outgold04@gmail.com</a></p></div></div></section>
+<header class="top">
+  <div class="shell topline">
+    <button class="brand" id="brand-home" type="button" aria-label="Página inicial OutGold Vagas">
+      <img src="https://raw.githubusercontent.com/outgold04-maker/OutGold-Start/main/outgold-sites/company/logo-original.jpg" alt="Logotipo original OutGold">
+      <span>OUTGOLD <span style="color:#fff;font-weight:400">VAGAS 5D</span><small>TECNOLOGIA OUTGOLD</small></span>
+    </button>
+    <nav class="tabs" role="tablist" aria-label="Seções do portal">
+      <button role="tab" class="tab" id="tab-inicio" aria-controls="screen-inicio" aria-selected="true" data-tab="inicio">Início</button>
+      <button role="tab" class="tab" id="tab-vagas" aria-controls="screen-vagas" aria-selected="false" data-tab="vagas" tabindex="-1">Vagas</button>
+      <button role="tab" class="tab" id="tab-candidato" aria-controls="screen-candidato" aria-selected="false" data-tab="candidato" tabindex="-1">Candidato</button>
+      <button role="tab" class="tab" id="tab-empresas" aria-controls="screen-empresas" aria-selected="false" data-tab="empresas" tabindex="-1">Empresas</button>
+      <button role="tab" class="tab" id="tab-planos" aria-controls="screen-planos" aria-selected="false" data-tab="planos" tabindex="-1">Planos</button>
+      <button role="tab" class="tab" id="tab-informacoes" aria-controls="screen-informacoes" aria-selected="false" data-tab="informacoes" tabindex="-1">Informações</button>
+    </nav>
+    <span class="state">Prévia sem cobranças</span>
+  </div>
+</header>
+<main class="shell">
+  <section class="screen" id="screen-inicio" role="tabpanel" aria-labelledby="tab-inicio">
+    <div class="hero"><div class="hero-inner">
+      <img class="hero-logo" src="https://raw.githubusercontent.com/outgold04-maker/OutGold-Start/main/outgold-sites/company/logo-original.jpg" alt="Logo original OutGold">
+      <div class="kicker">Oportunidades em todo o Brasil</div>
+      <h1>Seu futuro começa <span class="gradient">aqui.</span></h1>
+      <p class="lead">O OutGold Vagas aproxima profissionais e empresas, com uma experiência clara, elegante e acessível.</p>
+      <p class="micro">Candidatos grátis · 7 dias para empresas conhecerem o portal</p>
+      <div class="hero-status">Nova interface — versão de demonstração</div>
+    </div></div>
+  </section>
+
+  <section class="screen" id="screen-vagas" role="tabpanel" aria-labelledby="tab-vagas" hidden>
+    <div class="sectionhead"><span class="kicker">Oportunidades</span><h2>Encontre sua vaga</h2><p class="lead">Pesquise por cargo, localização e modalidade.</p></div>
+    <div class="panel">
+      <div class="search">
+        <div><label for="q" class="field">Cargo ou palavra-chave</label><input id="q" class="control" maxlength="100" placeholder="Ex.: auxiliar administrativo"></div>
+        <div><label for="city" class="field">Cidade / Estado</label><input id="city" class="control" maxlength="100" placeholder="Ex.: Cajamar, SP"></div>
+        <div><label for="mode" class="field">Modalidade</label><select id="mode" class="control"><option value="">Todas</option><option>Presencial</option><option>Remoto</option><option>Híbrido</option></select></div>
+      </div>
+      <div class="btns"><button class="button" type="button" id="searchButton">Pesquisar</button><button class="button flat" type="button" id="clearSearch">Limpar filtros</button></div>
+      <div class="empty" id="jobsEmpty" role="status"><strong>Nenhuma vaga sincronizada nesta prévia</strong>Os anúncios reais do Apps Script permanecem preservados. A migração segura ainda precisa ser concluída.</div>
+    </div>
+  </section>
+
+  <section class="screen" id="screen-candidato" role="tabpanel" aria-labelledby="tab-candidato" hidden>
+    <div class="sectionhead"><span class="kicker">100% gratuito</span><h2>Meu perfil de candidato</h2><p class="lead">Escolha sua foto e monte uma prévia de perfil profissional.</p></div>
+    <div class="cols">
+      <form class="panel" id="candidateForm" autocomplete="off">
+        <div class="profile">
+          <div class="avatar" id="candidateAvatar" aria-label="Foto de perfil do candidato">👤</div>
+          <div><h3 id="candidateDisplay">Seu perfil</h3><small id="candidateSubtitle">Foto e dados profissionais</small></div>
+        </div>
+        <label class="field" for="candidatePhoto">Foto de perfil</label>
+        <div class="upload"><input id="candidatePhoto" type="file" accept="image/jpeg,image/png,image/webp"><label for="candidatePhoto" class="upload-label">Escolher foto (JPG, PNG ou WebP)</label></div>
+        <p class="faint">Imagem quadrada, otimizada automaticamente; máximo de 3 MB. A foto fica somente nesta demonstração local.</p>
+        <label class="field" for="candidateName">Nome de exibição</label>
+        <input class="control" id="candidateName" required maxlength="80" placeholder="Seu nome">
+        <label class="field" for="candidateRole">Área profissional</label>
+        <input class="control" id="candidateRole" maxlength="100" placeholder="Ex.: Logística, Administração, Saúde">
+        <label class="field" for="candidateCity">Cidade / Estado</label>
+        <input class="control" id="candidateCity" maxlength="90" placeholder="Ex.: São Paulo, SP">
+        <div class="btns"><button type="submit" class="button">Salvar prévia neste aparelho</button><button type="button" class="button flat" id="resetCandidate">Remover prévia</button></div>
+        <div class="status" id="candidateStatus" role="status" aria-live="polite"></div>
+      </form>
+      <aside class="panel light">
+        <span class="kicker">Seu currículo, sua privacidade</span>
+        <h3>Perfil com foto, sem mensalidade</h3>
+        <p class="mini">A foto escolhida aparece na tela e, se você salvar, fica guardada somente neste navegador. Ela não é enviada ao site, não é compartilhada com empresas e não substitui uma candidatura.</p>
+        <div class="divider"></div>
+        <p class="mini">O envio real de currículos e a sincronização entre celulares serão ativados quando o novo banco tiver autenticação e armazenamento privado testados.</p>
+        <div class="callout">Nunca pague para se candidatar a uma vaga no OutGold Vagas.</div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="screen" id="screen-empresas" role="tabpanel" aria-labelledby="tab-empresas" hidden>
+    <div class="sectionhead"><span class="kicker">Para empregadores</span><h2>Perfil da empresa</h2><p class="lead">Adicione seu logotipo e visualize como sua empresa será apresentada.</p></div>
+    <div class="cols">
+      <form class="panel" id="companyForm" autocomplete="off">
+        <div class="profile">
+          <div class="avatar square" id="companyAvatar" aria-label="Logotipo da empresa">🏢</div>
+          <div><h3 id="companyDisplay">Sua empresa</h3><small id="companySubtitle">Identidade e apresentação</small></div>
+        </div>
+        <label class="field" for="companyLogo">Logotipo da empresa</label>
+        <div class="upload"><input id="companyLogo" type="file" accept="image/jpeg,image/png,image/webp"><label for="companyLogo" class="upload-label">Escolher logotipo (JPG, PNG ou WebP)</label></div>
+        <p class="faint">O logotipo permanece inteiro na prévia. Imagens de até 3 MB.</p>
+        <label class="field" for="companyName">Nome comercial</label>
+        <input class="control" id="companyName" required maxlength="100" placeholder="Nome da empresa">
+        <label class="field" for="companyActivity">Área de atuação</label>
+        <input class="control" id="companyActivity" maxlength="100" placeholder="Ex.: Transporte e Logística">
+        <label class="field" for="companyCity">Cidade / Estado</label>
+        <input class="control" id="companyCity" maxlength="90" placeholder="Ex.: Jundiaí, SP">
+        <div class="btns"><button type="submit" class="button">Salvar prévia neste aparelho</button><button type="button" class="button flat" id="resetCompany">Remover prévia</button></div>
+        <div class="status" id="companyStatus" role="status" aria-live="polite"></div>
+      </form>
+      <aside class="panel light">
+        <span class="kicker">Atraia talentos</span>
+        <h3>7 dias de divulgação grátis</h3>
+        <p class="mini">A oferta prevista para empresas é de 7 dias corridos com até três vagas simultâneas. Depois, o acesso poderá ser liberado pelo administrador após conferir o pagamento Pix.</p>
+        <div class="divider"></div>
+        <p class="mini">A prévia do logotipo fica armazenada apenas neste dispositivo. Cadastro empresarial, publicação de vagas e ativação de planos estão temporariamente desabilitados neste novo endereço até validar o servidor.</p>
+        <div class="callout">Não faça pagamentos por esta versão de demonstração.</div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="screen" id="screen-planos" role="tabpanel" aria-labelledby="tab-planos" hidden>
+    <div class="sectionhead"><span class="kicker">Condições de lançamento</span><h2>Planos para empresas</h2><p class="lead">Candidatura sempre gratuita. Valores previstos, sem contratação nesta prévia.</p></div>
+    <div class="grid3">
+      <div class="pricecard"><span class="badge">Essencial</span><h3>Começar</h3><div class="price">R$ 19,90</div><p>30 dias · ou R$ 199 / 365 dias</p><ul class="short"><li>1 vaga ativa</li><li>Contato por e-mail</li><li>Gerenciamento de anúncio</li></ul></div>
+      <div class="pricecard feature"><span class="badge">Profissional</span><h3>Crescer</h3><div class="price">R$ 39,90</div><p>30 dias · ou R$ 399 / 365 dias</p><ul class="short"><li>5 vagas ativas</li><li>Painel da empresa</li><li>Acompanhamento de candidaturas</li></ul></div>
+      <div class="pricecard"><span class="badge">Destaque</span><h3>Expandir</h3><div class="price">R$ 79,90</div><p>30 dias · ou R$ 799 / 365 dias</p><ul class="short"><li>20 vagas ativas</li><li>Prioridade de anúncios</li><li>Gestão administrativa</li></ul></div>
+    </div>
+    <div class="callout" style="margin-top:20px">Teste grátis de sete dias por empresa elegível (até três anúncios ativos). Cobrança Pix e aprovação administrativa serão retomadas somente após a validação do novo banco.</div>
+  </section>
+
+  <section class="screen" id="screen-informacoes" role="tabpanel" aria-labelledby="tab-informacoes" hidden>
+    <div class="sectionhead"><span class="kicker">OutGold Tecnologia</span><h2>Informações e privacidade</h2><p class="lead">Transparência para empresas, candidatos e administradores.</p></div>
+    <div class="panel center">
+      <h3>Uma prévia segura, sem dados publicados</h3>
+      <p class="mini">Esta versão já está hospedada de forma independente do Google Apps Script. A função de salvar foto ou logotipo grava uma cópia compactada apenas no armazenamento deste navegador, quando você solicitar. O conteúdo poderá ser apagado por você.</p>
+      <div class="divider"></div>
+      <h3>Candidatos e empresas</h3>
+      <p class="mini">Ainda não há contas nem banco sincronizados neste novo site. Não envie senhas, currículos ou comprovantes de Pix para esta prévia. O banco anterior, os currículos antigos e as implantações do Apps Script não foram alterados.</p>
+      <div class="divider"></div>
+      <h3>Contato e atendimento</h3>
+      <p class="mini">Dúvidas sobre o lançamento e privacidade: <a href="mailto:outgold04@gmail.com">outgold04@gmail.com</a>.</p>
+    </div>
+  </section>
 </main>
-<footer class="footer"><div class="wrap footgrid"><span><strong>OUTGOLD VAGAS 5D</strong> · Tecnologia OutGold</span><span>Candidatura sempre gratuita · Sem cobrança de candidato</span><span>Prévia do acesso independente · Sem coleta de currículos</span></div></footer>
+<footer><div class="shell foot"><span><strong>OUTGOLD VAGAS 5D</strong> · Tecnologia OutGold</span><span>Android · iPhone · Computador</span><span>Prévia segura · Sem cobranças</span></div></footer>
 <script>
 (function(){
-var email='outgold04@gmail.com';
-function value(id){return document.getElementById(id).value.trim()}
-function body(){return 'Olá, equipe OutGold Vagas!\n\nEmpresa: '+(value('empresa')||'[informar]')+'\nE-mail: '+(value('contato')||'[informar]')+'\n\nNecessidade:\n'+(value('mensagem')||'[informar]')+'\n\nGostaria de saber quando será aberta a plataforma de anúncios.'}
-document.getElementById('enviar').addEventListener('click',function(){window.location.href='mailto:'+email+'?subject='+encodeURIComponent('Interesse empresarial — OutGold Vagas 5D')+'&body='+encodeURIComponent(body())});
-document.getElementById('copiar').addEventListener('click',async function(){try{await navigator.clipboard.writeText(body());this.textContent='Mensagem copiada';}catch(e){window.prompt('Copie a mensagem:',body())}});
-document.getElementById('pesquisar').addEventListener('click',function(){document.querySelector('#vagas .empty b').textContent='A busca estará ativa quando as vagas reais forem migradas.'});
+'use strict';
+var keys=['inicio','vagas','candidato','empresas','planos','informacoes'],tabs=[...document.querySelectorAll('[role="tab"]')];
+function selectTab(name,setHash){
+ if(!keys.includes(name)) name='inicio';
+ keys.forEach(function(k){var visible=k===name,t=document.getElementById('tab-'+k);
+  t.setAttribute('aria-selected',String(visible));t.tabIndex=visible?0:-1;
+  document.getElementById('screen-'+k).hidden=!visible;
+ });
+ if(setHash&&location.hash!==('#'+name)) history.pushState(null,'','#'+name);
+ scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+}
+tabs.forEach(function(t,i){t.addEventListener('click',function(){selectTab(t.dataset.tab,true)});
+ t.addEventListener('keydown',function(e){if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;
+ e.preventDefault();var x=e.key==='Home'?0:e.key==='End'?tabs.length-1:(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;tabs[x].focus();selectTab(tabs[x].dataset.tab,true);
+ });});
+document.getElementById('brand-home').addEventListener('click',function(){selectTab('inicio',true)});
+addEventListener('hashchange',function(){selectTab(location.hash.slice(1),false)});
+selectTab(location.hash.slice(1)||'inicio',false);
+function byId(id){return document.getElementById(id)}
+function initials(s){return ((s||'').trim().split(/\s+/).slice(0,2).map(function(x){return x.slice(0,1)}).join('').toUpperCase()||'•')}
+function val(id){return byId(id).value.trim()}
+function escapeValid(v){return String(v||'').replace(/[\u0000-\u001f\u007f]/g,'').trim()}
+var profileState={candidate:{image:null},company:{image:null}};
+function renderAvatar(type){
+ var isCandidate=type==='candidate',p=profileState[type],id=isCandidate?'candidateAvatar':'companyAvatar';
+ var a=byId(id),name=val(isCandidate?'candidateName':'companyName'),role=val(isCandidate?'candidateRole':'companyActivity'),city=val(isCandidate?'candidateCity':'companyCity');
+ a.textContent='';
+ if(p.image){var img=new Image();img.alt=isCandidate?'Foto selecionada':'Logotipo selecionado';img.src=p.image;a.appendChild(img)}
+ else a.textContent=isCandidate?initials(name):initials(name)||'🏢';
+ byId(isCandidate?'candidateDisplay':'companyDisplay').textContent=name||(isCandidate?'Seu perfil':'Sua empresa');
+ byId(isCandidate?'candidateSubtitle':'companySubtitle').textContent=[role,city].filter(Boolean).join(' · ')||(isCandidate?'Foto e dados profissionais':'Identidade e apresentação');
+}
+function imageToDataURL(file,kind){
+ return new Promise(function(resolve,reject){
+  if(!file||!['image/jpeg','image/png','image/webp'].includes(file.type)){reject(new Error('Escolha um arquivo JPG, PNG ou WebP.'));return}
+  if(file.size>3*1024*1024){reject(new Error('Imagem muito grande. O limite é de 3 MB.'));return}
+  var reader=new FileReader();
+  reader.onerror=function(){reject(new Error('Não foi possível ler a imagem.'))};
+  reader.onload=function(){
+   var img=new Image();
+   img.onerror=function(){reject(new Error('Arquivo de imagem inválido.'))};
+   img.onload=function(){
+    if(!img.naturalWidth||!img.naturalHeight||img.naturalWidth*img.naturalHeight>45000000){reject(new Error('Dimensões da imagem não permitidas.'));return}
+    try{
+     var side=420,cv=document.createElement('canvas'),ctx=cv.getContext('2d');cv.width=side;cv.height=side;
+     ctx.fillStyle=kind==='company'?'#222129':'#18171a';ctx.fillRect(0,0,side,side);
+     var scale=kind==='company'?Math.min(side/img.width,side/img.height):Math.max(side/img.width,side/img.height);
+     var w=img.width*scale,h=img.height*scale;ctx.drawImage(img,(side-w)/2,(side-h)/2,w,h);
+     var out=cv.toDataURL('image/jpeg',.79);
+     if(out.length>300000){reject(new Error('Não foi possível compactar o arquivo para a prévia.'));return}
+     resolve(out);
+    }catch(e){reject(new Error('Não foi possível processar a imagem.'))}
+   };
+   img.src=reader.result;
+  };
+  reader.readAsDataURL(file);
+ });
+}
+function wire(type,prefix){
+ var fileInput=byId(type==='candidate'?'candidatePhoto':'companyLogo');
+ var fields=type==='candidate'?['candidateName','candidateRole','candidateCity']:['companyName','companyActivity','companyCity'];
+ var state=profileState[type],status=byId(prefix+'Status');
+ fileInput.addEventListener('change',async function(){
+  if(!fileInput.files.length)return;
+  status.textContent='Preparando imagem...';
+  try{state.image=await imageToDataURL(fileInput.files[0],type);renderAvatar(type);status.textContent='Imagem pronta. Clique em salvar para manter neste aparelho.'}
+  catch(e){status.textContent=e.message}
+  finally{fileInput.value=''}
+ });
+ fields.forEach(function(f){byId(f).addEventListener('input',function(){renderAvatar(type)})});
+ var form=byId(prefix+'Form');
+ form.addEventListener('submit',function(e){
+  e.preventDefault();
+  var x={image:state.image,values:fields.map(function(f){return escapeValid(val(f))})};
+  if(!x.values[0]){status.textContent='Preencha o nome antes de salvar.';return}
+  try{localStorage.setItem('outgold_vagas_preview_'+type+'_v1',JSON.stringify(x));status.textContent='Prévia salva apenas neste navegador, sem enviar dados ao servidor.'}
+  catch(e){status.textContent='O navegador não permitiu salvar. A prévia permanece nesta sessão.'}
+ });
+ byId(type==='candidate'?'resetCandidate':'resetCompany').addEventListener('click',function(){
+  state.image=null;fields.forEach(function(f){byId(f).value=''});try{localStorage.removeItem('outgold_vagas_preview_'+type+'_v1')}catch(e){}
+  renderAvatar(type);status.textContent='Prévia apagada deste navegador.';
+ });
+ try{
+  var saved=JSON.parse(localStorage.getItem('outgold_vagas_preview_'+type+'_v1')||'null');
+  if(saved&&Array.isArray(saved.values)&&saved.values.length===fields.length){
+   fields.forEach(function(f,i){byId(f).value=String(saved.values[i]||'').slice(0,120)});
+   if(typeof saved.image==='string'&&/^data:image\/jpeg;base64,/.test(saved.image)&&saved.image.length<300000)state.image=saved.image;
+   status.textContent='Prévia recuperada deste navegador.';
+  }
+ }catch(e){}
+ renderAvatar(type);
+}
+wire('candidate','candidate');wire('company','company');
+byId('searchButton').addEventListener('click',function(){byId('jobsEmpty').querySelector('strong').textContent='Busca disponível após a sincronização das vagas.'});
+byId('clearSearch').addEventListener('click',function(){['q','city','mode'].forEach(function(id){byId(id).value=''});byId('jobsEmpty').querySelector('strong').textContent='Nenhuma vaga sincronizada nesta prévia'});
 })();
 </script>
-</body></html>
+</body>
+</html>

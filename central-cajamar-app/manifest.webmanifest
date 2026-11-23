@@ -1,0 +1,27 @@
+{
+  "name": "Central de Ambulâncias de Cajamar — Gestão de Escalas | Tecnologia OutGold",
+  "short_name": "Central Cajamar",
+  "description": "Escalas, equipes, viaturas e bases — versão de demonstração",
+  "id": "./",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f0f5fb",
+  "theme_color": "#092e60",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "./assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

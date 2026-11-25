@@ -1,0 +1,57 @@
+name: Build OutGold Finance Android
+on:
+  push:
+    branches: [outgold-finance-pwa]
+    paths: ['.github/workflows/outgold-finance-android.yml','outgold-finance/**']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare logo and validate JavaScript
+        run: |
+          python3 -m pip install Pillow
+          python3 outgold-finance/build.py
+          python3 - <<'PY'
+          import pathlib,re
+          p=pathlib.Path('outgold-finance/index.html')
+          s=p.read_text()
+          pathlib.Path('/tmp/finance.js').write_text(re.search(r'<script>(.*?)</script>',s,re.S).group(1))
+          PY
+          node --check /tmp/finance.js
+      - name: Build signed Android APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          SDK="${ANDROID_HOME:-$ANDROID_SDK_ROOT}"
+          PLATFORM=$(find "$SDK/platforms" -name android.jar | sort -V | tail -1)
+          BT=$(find "$SDK/build-tools" -name aapt -type f | sort -V | tail -1 | xargs dirname)
+          mkdir -p build/{classes,dex,assets,res/drawable}
+          cp outgold-finance/{index.html,logo-original.jpg,manifest.webmanifest,sw.js,icon-192.png,icon-512.png} build/assets/
+          cp outgold-finance/icon-192.png build/res/drawable/logo.png
+          python3 - <<'PY'
+          import pathlib
+          p=pathlib.Path('build/assets/index.html')
+          s=p.read_text().replace('function download(name,data,mime){','function download(name,data,mime){if(window.OutGoldAndroid){OutGoldAndroid.save(name,data,mime);return;}').replace("if(a==='print')window.print();","if(a==='print'){if(window.OutGoldAndroid)OutGoldAndroid.print();else window.print();}").replace("if(a==='install'){","if(a==='install'){if(window.OutGoldAndroid){alert('OutGold Finance já está instalado.');return;}")
+          p.write_text(s)
+          PY
+          javac -source 8 -target 8 -cp "$PLATFORM" -d build/classes outgold-finance/android/MainActivity.java
+          "$BT/d8" --lib "$PLATFORM" --output build/dex $(find build/classes -name '*.class')
+          "$BT/aapt" package -f -M outgold-finance/android/AndroidManifest.xml -S build/res -A build/assets -I "$PLATFORM" -F build/unsigned.apk
+          (cd build/dex && "$BT/aapt" add ../unsigned.apk classes.dex)
+          "$BT/zipalign" -f 4 build/unsigned.apk build/aligned.apk
+          keytool -genkeypair -keystore build/signing.jks -storepass android -keypass android -alias outgold -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=OutGold Finance"
+          "$BT/apksigner" sign --ks build/signing.jks --ks-pass pass:android --key-pass pass:android --out OutGold-Finance-3.apk build/aligned.apk
+          "$BT/apksigner" verify --verbose OutGold-Finance-3.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: OutGold-Finance-Android
+          path: OutGold-Finance-3.apk
+      - name: Publish APK
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create outgold-finance-v3 OutGold-Finance-3.apk --target "$GITHUB_SHA" --title "OutGold Finance 3.0" --notes "Android offline, armazenamento local. Faça backup antes de substituir a instalação." || gh release upload outgold-finance-v3 OutGold-Finance-3.apk --clobber
